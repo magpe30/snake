@@ -3,26 +3,22 @@ const board_background = "#fd746c";
 const snake_col = "#4ca1af";
 const snake_border = "white";
 
-var gameIsOn = false;
-var myTime;
-var score = 0;
-var dy;
-var dx;
-var food_x;
-var food_y;
-var snake;
-var hidden = document.querySelector(".hidden");
-var score_count = document.querySelector(".score_count");
-
+let gameIsOn = false;
+let myTime;
+let score = 0;
+let dy;
+let dx;
+let food_x;
+let food_y;
+let snake;
+let hidden = document.querySelector(".hidden");
+let score_count = document.querySelector(".score_count");
 
 const snakeBoard = document.getElementById("canvas");
 const snakeBoard_ctx = snakeBoard.getContext("2d");     
 
-
-
 document.addEventListener("keydown", changeDirection);
 let changing_direction = false;
-
 //===============================
 //MAIN FUNCTIONS
 //===============================
@@ -104,7 +100,6 @@ function drawFood(){
     snakeBoard_ctx.fillRect(food_x, food_y, 10, 10);
     snakeBoard_ctx.strokeRect(food_x, food_y, 10, 10);
 };
-
 function drawSnakeBody(snakeBody){
     snakeBoard_ctx.fillStyle = snake_col;
     snakeBoard_ctx.strokeStyle = snake_border;
@@ -161,9 +156,7 @@ function moveSnake(){
     }else{
         snake.pop();
     }
-    
 };
-
 //=================================
 //Food functions
 //=================================
@@ -181,7 +174,6 @@ function randomFood(min, max){
 function genFood(){
     food_x = randomFood(0, snakeBoard.width - 10);
     food_y = randomFood(0, snakeBoard.height - 10);
-   
 };
 
 
